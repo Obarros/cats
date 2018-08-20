@@ -84,6 +84,13 @@ sealed class NonEmptyMapOps[K, A](val value: NonEmptyMap[K, A]) {
   def add(ka: (K, A)): NonEmptyMap[K, A] = NonEmptyMapImpl.create(toSortedMap + ka)
 
   /**
+    * Applies f to the value associated with the given key an return the updated `NonEmptyMap`.
+    */
+  def modify[K, A](nem: NonEmptyMap[K, A], key: K, f: A => A): NonEmptyMap[K, A] = {
+    ???
+  }
+
+  /**
     * Applies f to all the elements
     */
   def map[B](f: A ⇒ B): NonEmptyMap[K, B] =
